@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesús Agapito García Laza - Desarrollador Web Full Stack</title>
+    <meta name="description" content="Currículum Vitae de Jesús Agapito García Laza - Desarrollador de Aplicaciones Web Full Stack especializado en Java, PHP, React y Laravel">
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           ESTILOS PERSONALIZADOS - CURRÍCULUM WEB
+           Personaliza colores y tipografía aquí
+           ============================================ */
+        
+        :root {
+            --primary-color: #800020;
+            --primary-dark: #5c0017;
+            --secondary-color: #64748b;
+            --accent-color: #d4af37;
+            --blue-color: #1e3a8a;
+            --blue-dark: #172554;
+            --dark-bg: #1a1a2e;
+            --light-bg: #f8fafc;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--blue-dark) 100%);
+            color: white;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(128, 0, 32, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .hero-name {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-bio {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons .btn {
+            margin: 0.25rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(128, 0, 32, 0.3);
+        }
+
+        .btn-outline-custom {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .btn-outline-custom:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Secciones */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--blue-color));
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .custom-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--blue-color));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-description {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Habilidades */
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .skill-category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-bg);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            color: #0369a1;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .skill-logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            min-width: 90px;
+        }
+
+        .skill-logo-item:hover {
+            background: rgba(128, 0, 32, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .skill-logo-item img {
+            filter: grayscale(20%);
+            transition: all 0.3s ease;
+        }
+
+        .skill-logo-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .skill-logo-item span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .progress-skill {
+            margin-bottom: 1.25rem;
+        }
+
+        .progress-skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 10px;
+            background: #e2e8f0;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        /* Educación */
+        .education-card {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .education-degree {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+        }
+
+        .education-institution {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-date {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        .education-description {
+            margin-top: 0.75rem;
+            color: #64748b;
+        }
+
+        /* Contacto */
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            color: white;
+        }
+
+        .contact-section .section-title {
+            color: white;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-name {
+                font-size: 2rem;
+            }
+
+            .hero-title {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .contact-buttons .btn {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Animaciones suaves */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER / HERO SECTION
+         Personaliza: nombre, título, bio y enlaces
+         ============================================ -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+                    <!-- FOTO DE PERFIL - Reemplaza 'foto.jpg' con tu imagen -->
+                    <!-- Opciones: 1) Imagen local: 'images/mi-foto.jpg' -->
+                    <!--           2) URL externa: 'https://ejemplo.com/mi-foto.jpg' -->
+                    <img src="photo.jpg" alt="Foto de Jesús Agapito García Laza" class="hero-photo" onerror="this.src='https://via.placeholder.com/180x180/800020/d4af37?text=JG'">
+                </div>
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="hero-name">Jesús Agapito García Laza</h1>
+                    <p class="hero-title">Desarrollador de Aplicaciones Web Full Stack</p>
+                    <p class="hero-bio">
+                        Desarrollador full stack especializado en <strong>Java</strong> y <strong>PHP</strong>, con experiencia en frameworks como <strong>React</strong> y <strong>Laravel</strong>. 
+                        Conocimiento en frontend (CSS, HTML) y gestión de bases de datos. Persona proactiva, adaptable y comprometida con el aprendizaje continuo.
+                    </p>
+                    <div class="contact-buttons">
+                        <!-- Personaliza estos enlaces con tus datos reales -->
+                        <a href="mailto:agajesus12@gmail.com?subject=Contacto%20desde%20tu%20CV%20Web&body=Hola%20Jesús%2C%20me%20gustaría%20contactar%20contigo..." class="btn btn-primary-custom" id="emailBtn">
+                            <i class="bi bi-envelope me-2"></i>Email
+                        </a>
+                        <a href="tel:+34722578369" class="btn btn-outline-custom">
+                            <i class="bi bi-telephone me-2"></i>722 57 83 69
+                        </a>
+                        <a href="https://www.linkedin.com/in/jesusaga13" target="_blank" class="btn btn-outline-custom">
+                            <i class="bi bi-linkedin me-2"></i>LinkedIn
+                        </a>
+                        <a href="https://github.com/Agarpinho" target="_blank" class="btn btn-outline-custom">
+                            <i class="bi bi-github me-2"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============================================
+             SOBRE MÍ / PERFIL PROFESIONAL
+             Personaliza: resumen profesional
+             ============================================ -->
+        <section class="section" id="sobre-mi">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title">Sobre Mí</h2>
+                        <div class="custom-card">
+                            <p class="mb-3">
+                                Soy un <strong>desarrollador de aplicaciones web full stack</strong> con experiencia en múltiples lenguajes de programación, 
+                                especializado en <strong>Java</strong> y <strong>PHP</strong>. Cuento con conocimiento en varios frameworks como 
+                                <strong>React</strong> y <strong>Laravel</strong>, además de experiencia en frontend con <strong>CSS</strong> y <strong>HTML</strong> 
+                                y gestión de bases de datos.
+                            </p>
+                            <p class="mb-0">
+                                Soy una persona <strong>proactiva</strong>, <strong>adaptable</strong> y con facilidad para comunicarse. 
+                                Poseo <strong>pensamiento crítico</strong> y soy bueno en el <strong>trabajo en equipo</strong>. 
+                                Estoy comprometido a aprender y reinventarme con las nuevas tecnologías para aportar todo en los proyectos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             EXPERIENCIA LABORAL
+             Personaliza: puestos, empresas y fechas
+             ============================================ -->
+        <section class="section bg-white" id="experiencia">
+            <div class="container">
+                <h2 class="section-title">Experiencia Laboral</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="timeline">
+                            <!-- Experiencia 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-date">2026</div>
+                                <h3 class="timeline-title">Desarrollador Web</h3>
+                                <p class="timeline-company">Vizmaraqua</p>
+                                <p class="timeline-description">
+                                    Desarrollo de aplicaciones web y mantenimiento de sistemas. 
+                                    Trabajo con tecnologías frontend y backend.
+                                </p>
+                            </div>
+                            <!-- Experiencia 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-date">2023</div>
+                                <h3 class="timeline-title">Prácticas - Desarrollador</h3>
+                                <p class="timeline-company">AVATEL</p>
+                                <p class="timeline-description">
+                                    Prácticas formativas en desarrollo de aplicaciones. 
+                                    Aprendizaje y aplicación de conocimientos en entornos reales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             EDUCACIÓN Y CERTIFICACIONES
+             Personaliza: títulos, instituciones y fechas
+             ============================================ -->
+        <section class="section" id="educacion">
+            <div class="container">
+                <h2 class="section-title">Educación y Certificaciones</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="timeline">
+                            <!-- Educación 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-date">2024 - 2027</div>
+                                <div class="custom-card education-card">
+                                    <h3 class="education-degree">CFGS - Desarrollo de Aplicaciones Web (DAW)</h3>
+                                    <p class="education-institution">IES Fernando III</p>
+                                    <p class="education-description">
+                                        <strong>TFG:</strong> Diseño de una aplicación web para personas con alergias y restricciones alimentarias/químicas.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Educación 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-date">2023 - 2024</div>
+                                <div class="custom-card education-card">
+                                    <h3 class="education-degree">Curso de Programación en Entorno Servidor</h3>
+                                    <p class="education-institution">IES Fernando III</p>
+                                    <p class="education-description">
+                                        Formación especializada en programación del lado del servidor.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Educación 3 -->
+                            <div class="timeline-item">
+                                <div class="timeline-date">2021 - 2023</div>
+                                <div class="custom-card education-card">
+                                    <h3 class="education-degree">CFGM - Sistemas Microinformáticos y Redes (SMR)</h3>
+                                    <p class="education-institution">IES Miguel Sánchez López</p>
+                                    <p class="education-description">
+                                        Formación en sistemas informáticos y redes.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Educación 4 -->
+                            <div class="timeline-item">
+                                <div class="timeline-date">2016 - 2021</div>
+                                <div class="custom-card education-card">
+                                    <h3 class="education-degree">Educación Secundaria Obligatoria (ESO)</h3>
+                                    <p class="education-institution">IES Miguel Sánchez López</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             HABILIDADES / SKILLS
+             Personaliza: habilidades técnicas y blandas
+             ============================================ -->
+        <section class="section bg-white" id="habilidades">
+            <div class="container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="row">
+                    <!-- Hard Skills - Columna 1 -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="custom-card h-100">
+                            <h3 class="skill-category-title">
+                                <i class="bi bi-code-square text-primary"></i>
+                                Hard Skills
+                            </h3>
+                            
+                            <div class="skill-category">
+                                <h4 class="text-muted mb-3" style="font-size: 1rem;">Frameworks</h4>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="skill-logo-item">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/react.svg" alt="React" width="40" height="40">
+                                        <span>React</span>
+                                    </div>
+                                    <div class="skill-logo-item">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/laravel.svg" alt="Laravel" width="40" height="40">
+                                        <span>Laravel</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h4 class="text-muted mb-3" style="font-size: 1rem;">Lenguajes Backend</h4>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="skill-logo-item">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/java.svg" alt="Java" width="40" height="40">
+                                        <span>Java</span>
+                                    </div>
+                                    <div class="skill-logo-item">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/php.svg" alt="PHP" width="40" height="40">
+                                        <span>PHP</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h4 class="text-muted mb-3" style="font-size: 1rem;">Lenguajes Frontend</h4>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="skill-logo-item">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/html5.svg" alt="HTML5" width="40" height="40">
+                                        <span>HTML</span>
+                                    </div>
+                                    <div class="skill-logo-item">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" alt="CSS3" width="40" height="40">
+                                        <span>CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h4 class="text-muted mb-3" style="font-size: 1rem;">Bases de Datos</h4>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="skill-logo-item">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mysql.svg" alt="MySQL" width="40" height="40">
+                                        <span>MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills - Columna 2 -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="custom-card h-100">
+                            <h3 class="skill-category-title">
+                                <i class="bi bi-people text-primary"></i>
+                                Soft Skills
+                            </h3>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Resolución de problemas</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Trabajo en equipo y comunicación</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Adaptabilidad y aprendizaje continuo</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Gestión del tiempo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">
+                &copy; 2026 <strong>Jesús Agapito García Laza</strong>. Todos los derechos reservados.
+            </p>
+            <p class="mb-0 mt-2" style="font-size: 0.9rem;">
+                <i class="bi bi-geo-alt me-1"></i>
+                Calle Maestro Juan Parras, Torrdeldecampo, CP: 23640
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script para animaciones suaves al hacer scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.custom-card, .timeline-item').forEach(el => {
+                el.classList.add('fade-in');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
